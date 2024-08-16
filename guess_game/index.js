@@ -3,10 +3,6 @@ let chaneses = 3;
 
 const eve = document.getElementById('butt_hold');
 eve.addEventListener('click', () => {
-    if(chaneses < 1){
-        chaneses = 3;
-        gamenum = Math.round(Math.random() * 10);
-    }
     chosen(document.querySelector('span[name="game_button"]:hover'));
 });
 
@@ -28,6 +24,10 @@ function chosen(element){
     } else {
         mess(element.textContent)
         chaneses--;
+    }
+    if(chaneses < 1){
+        chaneses = 3;
+        gamenum = Math.round(Math.random() * 10);
     }
     document.getElementById('chanses').textContent = chaneses;
 }
